@@ -19,7 +19,7 @@ const Main = ({ videoSrc }) => {
   const [volume, setVolume] = useState(1); // Track volume level
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [aspectRatio, setAspectRatio] = useState("9:16"); // default aspect ratio
+  const [aspectRatio, setAspectRatio] = useState("9:18"); // default aspect ratio
   const [isCropperActive, setIsCropperActive] = useState(false);
 
   const [cropSize, setCropSize] = useState({ width: 150, height: 100 }); // Cropper size
