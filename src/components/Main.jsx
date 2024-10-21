@@ -10,9 +10,7 @@ import useSnapshot from "../lib/hooks/useSnapshot";
 import useCropper from "../lib/hooks/useCropper";
 import useControls from "../lib/hooks/useControls";
 
-import footballMatch from "../football_match1.mp4";
-
-const Main = () => {
+const Main = ({ videoSrc }) => {
   const videoRef = useRef(null); // Video reference
   const cropperRef = useRef(null); // Cropper reference
   const canvasRef = useRef(null); // Canvas reference for preview
@@ -76,34 +74,35 @@ const Main = () => {
     setCurrentTime(newTime);
   };
 
+
   useEffect(() => {
     const video = videoRef.current;
-
+  
     if (video) {
       const videoRect = video.getBoundingClientRect();
       const videoHeight = videoRect.height; // Cropper height should be 100% of the video height
       const aspectRatioValue = aspectRatios[aspectRatio];
-
+  
       // Calculate the cropper width based on the selected aspect ratio
       const cropWidth = videoHeight * aspectRatioValue;
-
+  
       // Update the cropper size
       setCropSize({
         width: Math.min(cropWidth, videoRect.width), // Ensure the width doesn't exceed video width
         height: videoHeight,
       });
-
+  
       // Adjust cropper position to ensure it doesn't go outside video bounds
       setCropPosition((prevPosition) => {
         const maxX = videoRect.width - Math.min(cropWidth, videoRect.width);
         const newX = Math.min(prevPosition.x, maxX); // Ensure the cropper stays within bounds
         return { ...prevPosition, x: newX };
       });
-
+  
       captureSnapshot(); // Capture snapshot when aspect ratio changes
     }
   }, [aspectRatio]);
-
+  
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -133,7 +132,7 @@ const Main = () => {
             onMouseMove={handleMouseMove} // Handle dragging movement
             onMouseUp={handleMouseUp} // Stop dragging
           >
-            <VideoPlayer ref={videoRef} src={footballMatch} />
+            <VideoPlayer ref={videoRef} src={videoSrc} />
             {isCropperActive && (
               <Cropper
                 cropPosition={cropPosition}
