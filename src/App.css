@@ -1,0 +1,72 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="range"] {
+  width: 100%;
+  background: gray;
+  border-radius: 10px;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  color: #999;
+  margin-right: 10px;
+}
+
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #4a4a4a; /* Background of the slider */
+  border-radius: 5px;
+  position: relative; /* Ensure proper positioning of the thumb */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px; /* Track height */
+  background: #4a4a4a; /* Same as the background */
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; /* Size of the thumb */
+  height: 16px;
+  background: #ffffff; /* White thumb */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px; /* Offset the thumb to align it vertically with the track */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  margin-top: -5px; /* Offset for Firefox */
+}
+
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  margin-top: -5px; /* Offset for IE */
+}
