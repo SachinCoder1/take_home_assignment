@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Video Flip Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **Dynamic Flip Screen** application that allows users to crop video content dynamically. The application integrates a video player, an overlay cropper layer with multiple aspect ratios, and provides a dynamic preview of the cropped segment.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Video Player Integration**:  
+  - Play, pause, and seek controls.
+  - Playback rate control with options (0.5x, 1x, 1.5x, 2x).
+  - Volume control.
+  
+- **Cropper Layer**:  
+  - Overlay on the video player with support for aspect ratios: 9:18, 9:16, 4:3, 3:4, 1:1, and 4:5.
+  - Movable and resizable cropper that stays within the video player's dimensions.
 
-### `npm start`
+- **Dynamic Preview**:  
+  - Real-time preview of the cropped video in a designated area.
+  - Aspect ratio matching between cropper and preview.
+  - Negligible delay between video player and preview.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Recording and Exporting**:  
+  - Records coordinates, volume, and playback rate at different timestamps.
+  - Generates a downloadable JSON file with the recorded data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Cloudinary**: For managing and serving video content.
+- **Amplify**: Used for deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Live Demo
 
-### `npm run build`
+Check out the live application: [Live App](https://main.dsjo0rmy921ay.amplifyapp.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/SachinCoder1/take_home_assignment.git
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Navigate to the project folder:
+   ```bash
+   cd take_home_assignment
+   ```
+3. Install dependencies:
+   ``` bash
+   npm install
+   ```
+4. Run the project:
+    ``` bash
+     npm start
+   ```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
+To create a production build:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Usage
+Once the application is running, you can:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Upload or load a video (currently using a default video hosted on Cloudinary).
+2. Crop the video using different aspect ratios and drag the cropper layer.
+3. Preview the cropped video in real-time.
+4. Generate JSON: Click the "Generate Preview" button to download a JSON file with cropper coordinates and other settings.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Improvements
+1. Add the ability to load custom videos.
+2. Enhance the recording of cropper coordinates to include finer details.
+3. Implement a feature to preview the recorded session using JSON data.
