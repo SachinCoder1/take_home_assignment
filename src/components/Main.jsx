@@ -10,7 +10,7 @@ import useSnapshot from "../lib/hooks/useSnapshot";
 import useCropper from "../lib/hooks/useCropper";
 import useControls from "../lib/hooks/useControls";
 
-import footballMatch from "../football_match.mp4";
+// import footballMatch from "../football_match.mp4";
 
 const Main = () => {
   const videoRef = useRef(null); // Video reference
@@ -133,7 +133,7 @@ const Main = () => {
             onMouseMove={handleMouseMove} // Handle dragging movement
             onMouseUp={handleMouseUp} // Stop dragging
           >
-            <VideoPlayer ref={videoRef} src={footballMatch} />
+            <VideoPlayer ref={videoRef} src={"/football_match1.mp4"} />
             {isCropperActive && (
               <Cropper
                 cropPosition={cropPosition}
