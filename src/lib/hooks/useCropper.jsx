@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const useCropper = (videoRef, cropperRef, setCropPosition,setIsCropperActive) => {
+const useCropper = (videoRef, cropperRef, setCropPosition,setIsCropperActive,captureSnapshot) => {
   const [isDragging, setIsDragging] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
 
@@ -30,6 +30,8 @@ const useCropper = (videoRef, cropperRef, setCropPosition,setIsCropperActive) =>
         x: Math.min(Math.max(0, newX), maxX),
         y: Math.min(Math.max(0, newY), maxY),
       });
+
+      captureSnapshot();
     }
   };
 

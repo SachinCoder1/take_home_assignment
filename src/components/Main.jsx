@@ -38,7 +38,7 @@ const Main = ({ videoSrc }) => {
     handleMouseUp,
     handleRemoveCropper,
     handleStartCropper,
-  } = useCropper(videoRef, cropperRef, setCropPosition, setIsCropperActive);
+  } = useCropper(videoRef, cropperRef, setCropPosition, setIsCropperActive, captureSnapshot);
 
   const { handlePlayPause, isPlaying } = useControls(
     videoRef,
